@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Elemente Übersicht</title>
+
+```
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #f4f4f4;
+    }
+
+    header {
+        background: #333;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    th {
+        background-color: #555;
+        color: white;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tbody tr:nth-child(odd) {
+        background-color: #ffffff;
+    }
+
+    tbody tr:hover {
+        background-color: #ddd;
+    }
+
+    footer {
+        background: #333;
+        color: white;
+        text-align: center;
+        padding: 10px;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+<header>
+    <h1>Elemente – Namen, Symbole, Herkunft</h1>
+</header>
+
+<main>
+
+<input type="text" id="search" placeholder="🔍 Suche nach Name oder Symbol...">
+
+<table id="elementTable">
+<thead>
+<tr>
+<th>Name</th>
+<th>Symbol</th>
+<th>Herkunft</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr><td>Wasserstoff</td><td>H</td><td>lat. hydrogenium: Wasserbildner</td></tr>
+<tr><td>Helium</td><td>He</td><td>gr. helios: Sonne</td></tr>
+<tr><td>Lithium</td><td>Li</td><td>gr. lithos: Stein</td></tr>
+<tr><td>Beryllium</td><td>Be</td><td>Beryll (Mineral)</td></tr>
+<tr><td>Bor</td><td>B</td><td>arab. buraq</td></tr>
+<tr><td>Kohlenstoff</td><td>C</td><td>lat. carbo: Kohle</td></tr>
+<tr><td>Stickstoff</td><td>N</td><td>lat. nitrogenium</td></tr>
+<tr><td>Sauerstoff</td><td>O</td><td>lat. oxygenium</td></tr>
+<tr><td>Fluor</td><td>F</td><td>lat. fluere: fließen</td></tr>
+<tr><td>Neon</td><td>Ne</td><td>gr. neos: neu</td></tr>
+<tr><td>Natrium</td><td>Na</td><td>arab. natron</td></tr>
+<tr><td>Magnesium</td><td>Mg</td><td>Magnesia</td></tr>
+<tr><td>Aluminium</td><td>Al</td><td>lat. alumen</td></tr>
+<tr><td>Silicium</td><td>Si</td><td>lat. silex</td></tr>
+<tr><td>Phosphor</td><td>P</td><td>Lichtträger</td></tr>
+<tr><td>Schwefel</td><td>S</td><td>lat. sulfur</td></tr>
+<tr><td>Chlor</td><td>Cl</td><td>gr. chloros</td></tr>
+<tr><td>Argon</td><td>Ar</td><td>gr. argos: träge</td></tr>
+<tr><td>Kalium</td><td>K</td><td>arab. al kalja</td></tr>
+<tr><td>Calcium</td><td>Ca</td><td>lat. calx</td></tr>
+<tr><td>Scandium</td><td>Sc</td><td>Skandinavien</td></tr>
+<tr><td>Titan</td><td>Ti</td><td>Titanen</td></tr>
+<tr><td>Vanadium</td><td>V</td><td>Vanadis (Göttin)</td></tr>
+<tr><td>Chrom</td><td>Cr</td><td>gr. chroma: Farbe</td></tr>
+<tr><td>Mangan</td><td>Mn</td><td>lat. magnes</td></tr>
+<tr><td>Eisen</td><td>Fe</td><td>lat. ferrum</td></tr>
+<tr><td>Cobalt</td><td>Co</td><td>Kobold</td></tr>
+<tr><td>Nickel</td><td>Ni</td><td>Kobold-Erz</td></tr>
+<tr><td>Kupfer</td><td>Cu</td><td>lat. cuprum</td></tr>
+<tr><td>Zink</td><td>Zn</td><td>mittelalterlich</td></tr>
+<tr><td>Gallium</td><td>Ga</td><td>Gallien</td></tr>
+<tr><td>Germanium</td><td>Ge</td><td>Deutschland</td></tr>
+<tr><td>Silber</td><td>Ag</td><td>lat. argentum</td></tr>
+<tr><td>Zinn</td><td>Sn</td><td>lat. stannum</td></tr>
+<tr><td>Gold</td><td>Au</td><td>lat. aurum</td></tr>
+<tr><td>Quecksilber</td><td>Hg</td><td>lat. hydrargyrum</td></tr>
+<tr><td>Blei</td><td>Pb</td><td>lat. plumbum</td></tr>
+<tr><td>Uran</td><td>U</td><td>Planet Uranus</td></tr>
+
+</tbody>
+</table>
+
+</main>
+
+<footer>
+© 2026 Chemie Projekt
+</footer>
+
+<script>
+const searchInput = document.getElementById("search");
+const rows = document.querySelectorAll("#elementTable tbody tr");
+
+searchInput.addEventListener("keyup", function() {
+    const filter = this.value.toLowerCase();
+
+    rows.forEach(row => {
+        const name = row.cells[0].textContent.toLowerCase();
+        const symbol = row.cells[1].textContent.toLowerCase();
+
+        if (name.includes(filter) || symbol.includes(filter)) {
+            row.style.display = "";
+        } else {
+            row.style.display = "none";
+        }
+    });
+});
+</script>
+
+</body>
+</html>
