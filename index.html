@@ -4,39 +4,51 @@
 
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Elemente Übersicht</title>
 
 <style>
 body {
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     margin: 0;
     background: #eef2f7;
 }
 
+/* HEADER */
 header {
     background: linear-gradient(90deg, #4a90e2, #357abd);
     color: white;
-    padding: 25px;
+    padding: 20px;
     text-align: center;
 }
 
+/* MAIN */
 main {
     max-width: 1000px;
     margin: auto;
-    padding: 20px;
+    padding: 15px;
 }
 
+/* CARD */
 .card {
     background: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
+/* SUCHFELDER */
 .search-container {
     display: flex;
     gap: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+}
+
+/* MOBILE: untereinander */
+@media (max-width: 600px) {
+    .search-container {
+        flex-direction: column;
+    }
 }
 
 input {
@@ -47,26 +59,42 @@ input {
     border: 1px solid #ccc;
 }
 
+/* TABELLE SCROLLBAR AUF HANDY */
+.table-container {
+    overflow-x: auto;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
+    min-width: 500px;
 }
 
 th, td {
     padding: 10px;
+    text-align: left;
 }
 
+/* KOPFZEILE */
 th {
     background-color: #444;
     color: white;
 }
 
+/* ZEILEN */
 tbody tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
 tbody tr:hover {
     background-color: #dfe9f3;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 15px;
+    color: #666;
 }
 </style>
 
@@ -86,6 +114,7 @@ tbody tr:hover {
 <input id="searchSymbol" placeholder="🔎 Symbol suchen">
 </div>
 
+<div class="table-container">
 <table id="elementTable">
 <thead>
 <tr>
@@ -97,78 +126,41 @@ tbody tr:hover {
 
 <tbody>
 
-<tr><td>Actinium</td><td>Ac</td><td>Strahl</td></tr>
 <tr><td>Aluminium</td><td>Al</td><td>alumen</td></tr>
-<tr><td>Americium</td><td>Am</td><td>Amerika</td></tr>
-<tr><td>Antimon</td><td>Sb</td><td>stibium</td></tr>
 <tr><td>Argon</td><td>Ar</td><td>träge</td></tr>
-<tr><td>Arsen</td><td>As</td><td>arsenikon</td></tr>
-<tr><td>Astat</td><td>At</td><td>instabil</td></tr>
-<tr><td>Barium</td><td>Ba</td><td>schwer</td></tr>
-<tr><td>Berkelium</td><td>Bk</td><td>Berkeley</td></tr>
-<tr><td>Beryllium</td><td>Be</td><td>Beryll</td></tr>
-<tr><td>Bismut</td><td>Bi</td><td>weiße Masse</td></tr>
 <tr><td>Blei</td><td>Pb</td><td>plumbum</td></tr>
 <tr><td>Bor</td><td>B</td><td>buraq</td></tr>
-<tr><td>Brom</td><td>Br</td><td>Gestank</td></tr>
-<tr><td>Cadmium</td><td>Cd</td><td>cadmia</td></tr>
 <tr><td>Calcium</td><td>Ca</td><td>calx</td></tr>
-<tr><td>Californium</td><td>Cf</td><td>Kalifornien</td></tr>
 <tr><td>Chlor</td><td>Cl</td><td>grün</td></tr>
 <tr><td>Chrom</td><td>Cr</td><td>Farbe</td></tr>
-<tr><td>Cobalt</td><td>Co</td><td>Kobold</td></tr>
-<tr><td>Copernicium</td><td>Cn</td><td>Kopernikus</td></tr>
-<tr><td>Curium</td><td>Cm</td><td>Curie</td></tr>
-<tr><td>Darmstadtium</td><td>Ds</td><td>Darmstadt</td></tr>
-<tr><td>Dubnium</td><td>Db</td><td>Dubna</td></tr>
-<tr><td>Dysprosium</td><td>Dy</td><td>schwer zugänglich</td></tr>
-<tr><td>Einsteinium</td><td>Es</td><td>Einstein</td></tr>
 <tr><td>Eisen</td><td>Fe</td><td>ferrum</td></tr>
-<tr><td>Erbium</td><td>Er</td><td>Ytterby</td></tr>
-<tr><td>Europium</td><td>Eu</td><td>Europa</td></tr>
-<tr><td>Fermium</td><td>Fm</td><td>Fermi</td></tr>
 <tr><td>Fluor</td><td>F</td><td>fließen</td></tr>
-<tr><td>Francium</td><td>Fr</td><td>Frankreich</td></tr>
-<tr><td>Gadolinium</td><td>Gd</td><td>Gadolin</td></tr>
-<tr><td>Gallium</td><td>Ga</td><td>Gallien</td></tr>
-<tr><td>Germanium</td><td>Ge</td><td>Deutschland</td></tr>
 <tr><td>Gold</td><td>Au</td><td>aurum</td></tr>
-<tr><td>Hafnium</td><td>Hf</td><td>Kopenhagen</td></tr>
-<tr><td>Hassium</td><td>Hs</td><td>Hessen</td></tr>
 <tr><td>Helium</td><td>He</td><td>Sonne</td></tr>
-<tr><td>Holmium</td><td>Ho</td><td>Stockholm</td></tr>
-<tr><td>Indium</td><td>In</td><td>Indigo</td></tr>
-<tr><td>Iod</td><td>I</td><td>violett</td></tr>
-<tr><td>Iridium</td><td>Ir</td><td>Regenbogen</td></tr>
-<tr><td>Kadmium</td><td>Cd</td><td>cadmia</td></tr>
-<tr><td>Kalium</td><td>K</td><td>al kalja</td></tr>
 <tr><td>Kohlenstoff</td><td>C</td><td>carbo</td></tr>
 <tr><td>Kupfer</td><td>Cu</td><td>cuprum</td></tr>
 <tr><td>Lithium</td><td>Li</td><td>Stein</td></tr>
 <tr><td>Magnesium</td><td>Mg</td><td>Magnesia</td></tr>
-<tr><td>Mangan</td><td>Mn</td><td>magnes</td></tr>
+<tr><td>Natrium</td><td>Na</td><td>natron</td></tr>
 <tr><td>Neon</td><td>Ne</td><td>neu</td></tr>
 <tr><td>Nickel</td><td>Ni</td><td>Kobold</td></tr>
-<tr><td>Nobelium</td><td>No</td><td>Nobel</td></tr>
-<tr><td>Osmium</td><td>Os</td><td>Geruch</td></tr>
-<tr><td>Palladium</td><td>Pd</td><td>Pallas</td></tr>
 <tr><td>Phosphor</td><td>P</td><td>Lichtträger</td></tr>
-<tr><td>Platin</td><td>Pt</td><td>Silberchen</td></tr>
-<tr><td>Plutonium</td><td>Pu</td><td>Pluto</td></tr>
-<tr><td>Radon</td><td>Rn</td><td>Radium</td></tr>
 <tr><td>Silber</td><td>Ag</td><td>argentum</td></tr>
 <tr><td>Silicium</td><td>Si</td><td>silex</td></tr>
 <tr><td>Sauerstoff</td><td>O</td><td>oxygenium</td></tr>
 <tr><td>Schwefel</td><td>S</td><td>sulfur</td></tr>
 <tr><td>Zink</td><td>Zn</td><td>mittelalterlich</td></tr>
-<tr><td>Zinn</td><td>Sn</td><td>lat. stannum: Zinn</td></tr>
-<tr><td>Zirconium</td><td>Zr</td><td>arab. zargun: goldfarben (Edelstein Zirkon)</td></tr>
 
 </tbody>
 </table>
+</div>
 
 </div>
 </main>
+
+<footer>
+© 2026 Chemie Projekt
+</footer>
 
 <script>
 const nameInput = document.getElementById("searchName");
